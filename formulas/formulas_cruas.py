@@ -7,7 +7,7 @@ especiais = '.;:()=+@!~/|-*><?#$%&_°}{][ªº,'
 abc = 'qwertyuiopasdfghjklzxcvbnm'
 
 #################################   
- def inicializa(palavras):
+def inicializa(palavras):
     import random
     retorno = {}
 
