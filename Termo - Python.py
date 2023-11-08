@@ -8,6 +8,6 @@ print('Você tem {0} tentativa(s)'.format(6))
 
 resp = input(" - Qual palavra sugeres? 🤔.......")
 
-print(funcoes.modelo(2))
+print(funcoes.modelo(2)) #ofoodofd
 print(funcoes.TENTATIVAS)
 print(TENTATIVAS)
