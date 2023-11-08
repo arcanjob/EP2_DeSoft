@@ -1,5 +1,5 @@
 import funcoes
-from funcoes import TENTATIVAS
+
 
 print('┏━━━━━━━━━━━━━━━━━━━━━━┓\n┃  Seja bem vindo(a)!  ┃\n┃  Esse é o jogo Termo ┃\n┗━━━━━━━━━━━━━━━━━━━━━━┛')
 print('\n')
