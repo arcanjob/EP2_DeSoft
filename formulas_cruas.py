@@ -57,3 +57,48 @@ def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERE
             palavrasv3.append(palavrasv2[i])
 
     return palavrasv3
+
+
+
+#função que vai mostrar a interfaço ao player
+
+def interface(string, vez):
+    #cria uma lista com cada letra da string
+    separadas = list(string)
+    l = ['      ']*30
+    if vez == 6:
+        i = 0
+    if vez == 5:
+        i = 5
+    if vez == 4:
+        i = 10
+    if vez == 3:
+        i = 15
+    if vez == 2:
+        i = 20
+    if vez == 1:
+        i = 25
+
+    #adiciona na lista cada letra que a string tinha
+    for letra in separadas:
+        l[i] = "  " + letra + "   "
+        i += 1
+
+    #isso é o que, de fato, vai ser mostrado para o usuário
+    msg = f'''
+    ┏━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┓
+    ┃  {l[0]} ┃  {l[1]} ┃  {l[2]} ┃  {l[3]} ┃  {l[4]} ┃    
+    ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
+    ┃  {l[5]} ┃  {l[6]} ┃  {l[7]} ┃  {l[8]} ┃  {l[9]} ┃    
+    ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
+    ┃  {l[10]} ┃  {l[11]} ┃  {l[12]} ┃  {l[13]} ┃  {l[14]} ┃    
+    ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
+    ┃  {l[15]} ┃  {l[16]} ┃  {l[17]} ┃  {l[18]} ┃  {l[19]} ┃    
+    ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
+    ┃  {l[20]} ┃  {l[21]} ┃  {l[22]} ┃  {l[23]} ┃  {l[24]} ┃
+    ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
+    ┃  {l[25]} ┃  {l[26]} ┃  {l[27]} ┃  {l[28]} ┃  {l[29]} ┃      
+    ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
+
+    '''
+    print(msg)

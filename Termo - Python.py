@@ -76,17 +76,13 @@ while info['tentativas'] != 0:
 
 
 
+############
+#FALTA FAZER A FUNÇÃO QUE VAI FICAR TROCANDO OS TERMOS E COLOCANDO AS LETRAS
+#AINDa N SEI COMO FAZER ISSO DE FORMA SIMPLES
+
 
 
       
-
-
-
-
-
-
-
-
 
 '''
 ┏━━━━━━┳━━━━━━┳━━━━━━┳━━━━━━┳━━━━━━┓
