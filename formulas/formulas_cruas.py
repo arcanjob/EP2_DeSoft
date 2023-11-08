@@ -61,6 +61,3 @@ def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERE
             palavrasv3.append(palavrasv2[i])
 
     return palavrasv3
-
-                
-        
