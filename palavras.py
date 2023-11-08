@@ -1,53 +1,7 @@
-
-#FUNÇÕES QUE VÃO SER USADAS NO TERMO
-def filtra(palavras, numero):
-    print(palavras)
-    normal = []
-    especiais = "?!.,"
-    
-    for palavra in palavras:
-       
-        if len(palavra) == numero:
-            corrigida = palavra.lower()
-            if not corrigida in normal:
-                normal.append(corrigida)
-    return normal
-
-#################################   
-    
-def inicializa(palavras):
-    import random
-    dic = {}
-    n = len(palavras[0])
-    dic['sorteada'] = random.choice(palavras)
-    dic["n"] = n 
-    dic['especuladas'] = []
-    dic['tentativas'] = n + 1
-    return dic
-
-#################################   
-
-def inidica_posicao(sorteada, especulada):
-    lista = [0]*len(sorteada)
-    
-    if len(sorteada) != len(especulada):
-        return []
-    else:
-        for i in range(len(especulada)):
-            
-            if especulada[i] in sorteada:
-                lista[i] = 1
-                if especulada[i] == sorteada[i]:
-                    lista[i] = 0
-            elif especulada[i] not in sorteada:
-                lista[i] = 2
-                
-    return lista
-
 PALAVRAS = [
     "a", "Aarao", "aba", "abacate", "abacateiro", "abacateiros", "abacates", "abacaxi", "abacaxis", "abaciais", "abacial", "abaco", "abacos", "abade", "abades", "abadessa", "abadessas", "abadia", "abadias", "abafa", 
     "abafada", "abafadas", "abafadica", "abafadicas", "abafadico", "abafadicos", "abafado", "abafados", "abafai", "abafais", "abafam", "abafamento", "abafamentos", "abafamo", "abafamos", "abafando", "abafar", "abafara", "abafaram", "abafaramos", 
-    "abafarao", "abafaras", "abafardes", "abafarei", "abafareis", "abafarem", "abafaremo", "abafaremos", "abafares", "abafaria", "abafariam", "abafariamos", "abafarias", "abafarieis", "abafarmo", "abafarmos", "abafas", "abafasse", "abafasseis", "abafassem", 
+    "abafarao", "abafaras",  "abafardes", "abafarei", "abafareis", "abafarem", "abafaremo", "abafaremos", "abafares", "abafaria", "abafariam", "abafariamos", "abafarias", "abafarieis", "abafarmo", "abafarmos", "abafas", "abafasse", "abafasseis", "abafassem", 
     "abafassemos", "abafasses", "abafaste", "abafastes", "abafava", "abafavam", "abafavamos", "abafavas", "abafaveis", "abafe", "abafei", "abafeis", "abafem", "abafemo", "abafemos", "abafes", "abafo", "abafou", "abaixa", "abaixada", 
     "abaixadas", "abaixado", "abaixados", "abaixai", "abaixais", "abaixam", "abaixamo", "abaixamos", "abaixando", "abaixar", "abaixara", "abaixaram", "abaixaramos", "abaixarao", "abaixaras", "abaixardes", "abaixarei", "abaixareis", "abaixarem", "abaixaremo", 
     "abaixaremos", "abaixares", "abaixaria", "abaixariam", "abaixariamos", "abaixarias", "abaixarieis", "abaixarmo", "abaixarmos", "abaixas", "abaixasse", "abaixasseis", "abaixassem", "abaixassemos", "abaixasses", "abaixaste", "abaixastes", "abaixava", "abaixavam", "abaixavamos", 
