@@ -1,3 +1,9 @@
+from palavras import *
+from letras_e_caracteres_especiais import *
+
+
+
+
 #FUNÇÕES QUE VÃO SER USADAS NO TERMO
 def filtra(palavras, numero):
     print(palavras)
