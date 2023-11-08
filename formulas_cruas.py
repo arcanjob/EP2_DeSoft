@@ -1,8 +1,4 @@
 from palavras import *
-from letras_e_caracteres_especiais import *
-
-
-
 especiais = '.;:()=+@!~/|-*><?#$%&_°}{][ªº,'
 abc = 'qwertyuiopasdfghjklzxcvbnm'
 
