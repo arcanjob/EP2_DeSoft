@@ -5,3 +5,7 @@ print('Você tem {0} tentativa(s)'.format(6))
 
 resp = input(" - Qual palavra sugeres? 🤔")
 
+#normaliza a palavra que o usuário respondeu
+escolhida = resp.lower()
+
+
