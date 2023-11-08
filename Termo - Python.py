@@ -1,5 +1,3 @@
-import funcoes
-
 
 print('┏━━━━━━━━━━━━━━━━━━━━━━┓\n┃  Seja bem vindo(a)!  ┃\n┃  Esse é o jogo Termo oooo ┃\n┗━━━━━━━━━━━━━━━━━━━━━━┛')
 print('\n')
@@ -7,7 +5,3 @@ print(' Regras: \n- Você tem {0} tentativas para acertar uma palavra aleatória
 print('Você tem {0} tentativa(s)'.format(6))
 
 resp = input(" - Qual palavra sugeres? 🤔.......")
-
-print(funcoes.modelo(2)) #ofoodofd
-print(funcoes.TENTATIVAS)
-print(TENTATIVAS)
