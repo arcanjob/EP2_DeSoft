@@ -30,7 +30,7 @@ def inidica_posicao(sorteada, especulada):
     lista = [0]*len(sorteada)
     
     if len(sorteada) != len(especulada):
-        return []
+        return [] 
     else:
         for i in range(len(especulada)):
             
