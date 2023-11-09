@@ -67,7 +67,7 @@ for i in range(6): #criando as celulas em forma de dicionario - PARA A INTERFACE
     d[str(i)] = ['      ']
 ###
 
-def print(ntentativa, tentativa): # vai dar a resposta
+def printando(ntentativa, tentativa): # vai dar a resposta
     
     def cor(nada):
         for i in range(len(tentativa)):
