@@ -1,5 +1,5 @@
-from palavras import *
-from letras_e_caracteres_especiais import *
+from ../salvando_palavras_e_caracteres/palavras import *
+
 
 
 
@@ -7,7 +7,7 @@ especiais = '.;:()=+@!~/|-*><?#$%&_°}{][ªº,'
 abc = 'qwertyuiopasdfghjklzxcvbnm'
 
 #################################   
- def inicializa(palavras):
+def inicializa(palavras):
     import random
     retorno = {}
 
