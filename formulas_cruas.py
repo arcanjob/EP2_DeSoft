@@ -59,30 +59,25 @@ def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERE
     return palavrasv3
 
 
+##############################################PRINT
 
-pre_tabela = ''
+d = {}
 
-for i in range(30):
-    pre_tabela += str(i)
-
-
-
-
-s = '0123451'
-
-pre_tabela.repalace(s, palavra)
+for i in range(6): #criando as celulas em forma de dicionario
+    d[str(i)] = ['      ']
 
 
-pre_tabelav2 = pre_tabela
-
-for i in range(len(pre_tabelav2)):
-    pre_tabelav2.replace(str(i),'      ')
 
 
-l = []
 
-for letra in palavra:
-    l.append(letra)
+
+
+
+
+
+
+
+
 
 #função que vai mostrar a interfaço ao player
 #Ela recebe dois argumentos, qual a palavra escolhida e quantas tentativas faltam
@@ -92,19 +87,7 @@ def interface(string, vez):
     
 
 
-    l = ['      ']*30
-    if vez == 6:
-        i = 0
-    if vez == 5:
-        i = 5
-    if vez == 4:
-        i = 10
-    if vez == 3:
-        i = 15
-    if vez == 2:
-        i = 20
-    if vez == 1:
-        i = 25
+
 
     #adiciona na lista cada letra que a string tinha sido dita
     for letra in separadas:
@@ -114,17 +97,17 @@ def interface(string, vez):
     #isso é o que, de fato, vai ser mostrado para o usuário
     msg = f'''
     ┏━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┓
-    ┃  {l[0]} ┃  {l[1]} ┃  {l[2]} ┃  {l[3]} ┃  {l[4]} ┃    
+    ┃  {d[0][0] ┃  d[0][1] ┃  d[0][2] ┃  d[0][3] ┃  d[0][4] ┃    
     ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
-    ┃  {l[5]} ┃  {l[6]} ┃  {l[7]} ┃  {l[8]} ┃  {l[9]} ┃    
+    ┃  d[1][0] ┃  d[2][1] ┃  d[2][2] ┃  d[2][3] ┃  d[1][4] ┃    
     ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
-    ┃  {l[10]} ┃  {l[11]} ┃  {l[12]} ┃  {l[13]} ┃  {l[14]} ┃    
+    ┃  d[2][0] ┃  d[2][1] ┃  d[2][2] ┃  d[2][3] ┃  d[2][4] ┃    
     ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
-    ┃  {l[15]} ┃  {l[16]} ┃  {l[17]} ┃  {l[18]} ┃  {l[19]} ┃    
+    ┃  {l[15]} ┃  {l[16]} ┃  {l[17]} ┃  d[2][3] ┃  d[3][4] ┃    
     ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
-    ┃  {l[20]} ┃  {l[21]} ┃  {l[22]} ┃  {l[23]} ┃  {l[24]} ┃
+    ┃  {l[20]} ┃  {l[21]} ┃  {l[22]} ┃  {l[23]} ┃  d[4][4] ┃
     ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
-    ┃  {l[25]} ┃  {l[26]} ┃  {l[27]} ┃  {l[28]} ┃  {l[29]} ┃      
+    ┃  {l[25]} ┃  {l[26]} ┃  {l[27]} ┃  {l[28]} ┃  d[5][4] ┃      
     ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
 
     '''
