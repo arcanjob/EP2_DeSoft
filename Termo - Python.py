@@ -41,7 +41,7 @@ print('Você tem {0} tentativa(s)'.format(6))
 while info['tentativas'] != 0:
     #input inicial que vai perguntar a palavra ao usuário
     resposta = input(" - Qual palavra sugeres? 🤔")
-    #remove os espaços em branco
+    #remove os espaços em branco 
     resposta = resposta.strip() 
 
     #confere se a especulada está ou não na lista de palavras viáveis
@@ -67,10 +67,10 @@ while info['tentativas'] != 0:
         #confere se a palavra já não foi sorteada
         if not info['sorteada'] in sorteadas:
             
-            #Confere se as letras da especulada com as da sorteada e diz a sua proximidade com a tal
-            #vai servir para colorir as letras e dizer se elas são ou não próximas da paalavra sorteada
+            #Confere se as letras da especulada com as da sorteada e diz a sua proximidade com ela
+            #(vai servir para colorir as letras e dizer se elas são ou não próximas da paalavra sorteada)
             posicao = inidica_posicao(info['sorteada'], resposta)
-
+        oi = interface(resposta)
         sorteadas.append(info['sorteada'])
         
 
@@ -79,6 +79,8 @@ while info['tentativas'] != 0:
 ############
 #FALTA FAZER A FUNÇÃO QUE VAI FICAR TROCANDO OS TERMOS E COLOCANDO AS LETRAS
 #AINDa N SEI COMO FAZER ISSO DE FORMA SIMPLES
+#FALTA PENSAR NUMA FORMA DE COLORIR AS LETRAS
+
 
 
 
