@@ -60,39 +60,30 @@ def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERE
 
 
 ##############################################PRINT
-
+#####VAI LÁ PRA CIMA
 d = {}
 
-for i in range(6): #criando as celulas em forma de dicionario
+for i in range(6): #criando as celulas em forma de dicionario - PARA A INTERFACE
     d[str(i)] = ['      ']
+###
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-#função que vai mostrar a interfaço ao player
-#Ela recebe dois argumentos, qual a palavra escolhida e quantas tentativas faltam
-def interface(string, vez):
-    #cria uma lista com cada letra da string
-    separadas = list(string)
+def print(ntentativa, tentativa): # vai dar a resposta
     
+    def cor(nada):
+        for i in range(len(tentativa)):
+            if tentativa[i] == 0:
+                cor = '\033[92m' #verde - acertou a posição
+            if tentativa[i] == 1:
+                cor = '\033[93m' #amarelo - errou a posição
+            
+            if tentativa[i] == 2:
+                cor = '\033[90m' #cinza - errou total
 
-
-
-
-    #adiciona na lista cada letra que a string tinha sido dita
-    for letra in separadas:
-        l[i] = "  " + letra + "   "
-        i += 1
+            return cor
+    
+    #vai criar um dicionario para as respostas
+    for iletra in range(len(tentativa)):
+        d[str(ntentativa)] = tentativa[iletra] + cor
 
     #isso é o que, de fato, vai ser mostrado para o usuário
     msg = f'''
@@ -114,3 +105,23 @@ def interface(string, vez):
     
     print(msg)
 
+
+#########################O DIC DE RESULTADOS
+dr = {} #dicionario do resultado
+
+def dic_dos_resultados (tentativa):
+
+
+
+
+
+
+
+
+for i in range(6):
+
+"""
+1 = Amarelo: '\033[93m'
+0 = Verde: '\033[92m'
+2 = cinza: '\033[90m'
+"""
