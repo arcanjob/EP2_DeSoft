@@ -21,16 +21,17 @@ print('''
       ''')
 #print('\n')
 print('''
- Regras: Você tem 6 tentativas para acertar uma palavra aleatória de 5 letras.
- - A cada tentativa, a palavra testada terá suas letras coloridas conforme:
- . Azul  : a letra está na posição correta;
- . Amarelo: a palavra tem a letra, mas está na posição errada;
- . Cinza: a palavra não tem a letra.
- - Os acentos são ignorados;
- - As palavras podem possuir letras repetidas.
+ Regras: 
+      Você tem 6 tentativas para acertar uma palavra aleatória de 5 letras.
+    - A cada tentativa, essa palavra testada terá suas letras coloridas conforme:
+    . VERDE  : a letra está na posição correta;
+    . AMARELO: a palavra tem a letra, mas está na posição errada;
+    . CINZA: a palavra não tem a letra.
+    - Os acentos são ignorados;
+    - As palavras podem possuir letras repetidas.
  
   Sorteando uma palavra...
-  Já tenho uma palavra! Tente adivinhá-la!
+  Já tenho uma palavra! vamos, tente adivinhá-la!
 ''')
 
 #informa a quantidade de tentativas restantes ao usuário
@@ -74,29 +75,9 @@ while info['tentativas'] != 0:
         sorteadas.append(info['sorteada'])
         
 
-
-
 ############
 #FALTA FAZER A FUNÇÃO QUE VAI FICAR TROCANDO OS TERMOS E COLOCANDO AS LETRAS
 #AINDa N SEI COMO FAZER ISSO DE FORMA SIMPLES
 #FALTA PENSAR NUMA FORMA DE COLORIR AS LETRAS
 
-
-
-
-      
-
-'''
-┏━━━━━━┳━━━━━━┳━━━━━━┳━━━━━━┳━━━━━━┓
-┃  {A} ┃  {B} ┃  {C} ┃  {C} ┃  {D} ┃  
-┠━━━━━━╋━━━━━━╋━━━━━━╋━━━━━━╋━━━━━━┨
-┃  {E} ┃  {F} ┃  {G} ┃  {H} ┃  {I} ┃  
-┠━━━━━━╋━━━━━━╋━━━━━━╋━━━━━━╋━━━━━━┨
-┃  {J} ┃  {K} ┃  {L} ┃  {M} ┃  {N} ┃  
-┠━━━━━━╋━━━━━━╋━━━━━━╋━━━━━━╋━━━━━━┨
-┃  {O} ┃  {P} ┃  {Q} ┃  {R} ┃  {S} ┃  
-┠━━━━━━╋━━━━━━╋━━━━━━╋━━━━━━╋━━━━━━┨
-┃  {T} ┃  {U} ┃  {V} ┃  {W} ┃  {X} ┃  
-┗━━━━━━┻━━━━━━┻━━━━━━┻━━━━━━┻━━━━━━┛
-
-'''
+   
