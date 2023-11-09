@@ -60,11 +60,38 @@ def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERE
 
 
 
+pre_tabela = ''
+
+for i in range(30):
+    pre_tabela += str(i)
+
+
+
+
+s = '0123451'
+
+pre_tabela.repalace(s, palavra)
+
+
+pre_tabelav2 = pre_tabela
+
+for i in range(len(pre_tabelav2)):
+    pre_tabelav2.replace(str(i),'      ')
+
+
+l = []
+
+for letra in palavra:
+    l.append(letra)
+
 #função que vai mostrar a interfaço ao player
 #Ela recebe dois argumentos, qual a palavra escolhida e quantas tentativas faltam
 def interface(string, vez):
     #cria uma lista com cada letra da string
     separadas = list(string)
+    
+
+
     l = ['      ']*30
     if vez == 6:
         i = 0
@@ -79,7 +106,7 @@ def interface(string, vez):
     if vez == 1:
         i = 25
 
-    #adiciona na lista cada letra que a string tinha
+    #adiciona na lista cada letra que a string tinha sido dita
     for letra in separadas:
         l[i] = "  " + letra + "   "
         i += 1
@@ -102,3 +129,5 @@ def interface(string, vez):
 
     '''
     print(msg)
+
+oi = interface("Termo", 5)
