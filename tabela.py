@@ -3,33 +3,66 @@ import random
 from formulas_cruas import *
 
 info = {}
-def inicializa(palavras): #cria o dicionário central
+nletras = 5 #escolhendo 5 letras
+resposta = #vai ser dado no termo
+
+
+#definindo a cor
+def cor(numero):
+    if int(numero) == 0:
+            cor = '\033[92m' #verde - acertou a posição
+    if int(numero) == 1:
+        cor = '\033[93m' #amarelo - errou a posição
+    if int(numero) == 2:
+        cor = '\033[90m' #cinza - errou total
+
+
+
+
+def inicializa(palavras_usaveis, nletras, especulada): #cria o dicionário central
     #info['especulada'] = resposta
-    info['n']= 6 #número de letra da palavra sorteada 
-    info['sorteada'] = random.choice(palavras) #seleção da palavra sorteada
-    info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
-    info['tentativas'] = info['n']+1 #numero de vidas
+    info['n']= nletras #número de letra da palavra sorteada 
+
+    info['sorteada'] = random.choice(palavras_usaveis) #seleção da palavra sorteada
     info['sorteadas'] = [] #lista de sorteadas
-    info['resultado'] = indica_posicao(info['sorteada'], info['especulada'])
+
+    
+    
+    info['tentativas'] = info['n']+1 #numero de vidas
     info['ntentativas'] = len(info['especuladas'])
     info['vidas'] = info['tentativas'] - info['ntentativas']
+    
+    info['especulada'] = especulada
+
+
+    info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
+    info['resultado'] = indica_posicao(info['sorteada'], info['especulada'])
+    
+    info['cor+especulada'] = []
+    for i in range(len(info['especulada'])):
+        cor_letra = cor(info['resultado'][i])
+        info['cor+especulada'].append([info['especulada'][i]+cor_letra])
+    
+    info['especuladas+cores'] = []
 
     return info
 
 
-inicializa(palavras)
 
-#n = info['n'] - numero de letras
+
+
+n = info['n'] - numero de letras
 ###################################CRIANDO A TABELA DINÂMICA
-def tabela(n):
+def tabela(n): #n = numero de letras
     linhazinha = ' --- '*(n+1) + '\n'
     tabela = linhazinha
-    linha = '|'
+    
     for i in range(n+1):  #numero de linhas
-        linha = '|'   #iniciando a linha - precisa de uma linha do lado, pra fechar os primeiros quadrados
-        for palavra in info['especuladas']:
-            for letra in palavra:
-                linha += f' {letra} |'
+        linha = '|'
+        #iniciando a linha - precisa de uma linha do lado, pra fechar os primeiros quadrados
+        for palavra in info['especuladas+cores']: #rodando as palavras especuladas
+            for iletra in range(len(palavra)):    #rodando as letras da palavra do historico a ´palavra' é uma tabela que corresponde a uma lista com as letras + as cores separadas 
+                linha += f' {palavra[iletra]} |'   #colocando as letras na celula
 
         tabela += linha + '\n' + linhazinha
         
@@ -37,5 +70,3 @@ def tabela(n):
         tabela += '|   '*n +'\n'+ linhazinha*info['vida']
 
     return tabela
-
-tabela(6)

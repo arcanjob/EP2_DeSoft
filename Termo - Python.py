@@ -95,7 +95,8 @@ while info['tentativas'] != 0:  #checa se o jogador ainda tem vida
         
         
         info['especuladas'].append(resposta)    #adiciona a resposta do usuário à lista de palavras especuladas
-        
+        info['especuladas+cores'].append(info['cor+especulada'])
+
         #confere se a palavra já não foi sorteada
         if not info['sorteada'] in info['sorteadas']:
             
