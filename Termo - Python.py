@@ -67,7 +67,7 @@ i = 0 #estabelecendo um contador
 #loop principal no qual o jogo vai girar entorno
 
 while info['tentativas'] != 0:  #checa se o jogador ainda tem vida
-    ########AVALIANDO SE A RESPOSTA É VALIDA
+    ########   AVALIANDO SE A RESPOSTA É VALIDA
     #input inicial que vai perguntar a palavra ao usuário
     resposta = input(" - Qual palavra sugeres? 🤔")
     i+=1 #contando as tentativas
