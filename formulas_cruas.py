@@ -1,16 +1,19 @@
+import random
+
 from palavras import *
 especiais = '.;:()=+@!~/|-*><?#$%&_°}{][ªº,'
 abc = 'qwertyuiopasdfghjklzxcvbnm'
 
 #################################   
-def inicializa(palavras):
-    import random
-    retorno = {}
+info = {}
 
-    retorno['n']=len(palavras[0]) #número de letra da palavra sorteada 
-    retorno['sorteada'] = random.choice(palavras) #seleção da palavra sorteada
-    retorno['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
-    retorno['tentativas'] = retorno['n']+1 #numero de vidas
+    info['n']=len(palavras[0]) #número de letra da palavra sorteada 
+    info['sorteada'] = random.choice(palavras) #seleção da palavra sorteada
+    info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
+    info['tentativas'] = info['n']+1 #numero de vidas
+    info['sorteadas'] = [] #lista de sorteadas
+    info['especulada'] = 
+    info['resultado'] = indica_posicao(info['sorteada'], info['especulada'])
 
     return retorno
 
@@ -68,11 +71,11 @@ for i in range(6): #criando as celulas em forma de dicionario - PARA A INTERFACE
 ###
 
 
-def printando(ntentativa, tentativa, sorteada): # vai dar a resposta
+def printando(info): # vai dar a resposta
     
     resultado = ''
-    for ivalor in range(5):
-        resultado += str(inidica_posicao(sorteada, tentativa)[ivalor])
+    for i in range(5):
+        resultado += str(info['sorteada'][i])
 
     print(resultado)
     #def cor(nada):

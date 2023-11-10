@@ -1,17 +1,41 @@
 from palavras import *
 from formulas_cruas import *
+import random
 
 #Define a lista de palavras que vão ser usadas no jogo
 palavras_normais = filtra(palavras, 5)
 
-
+'''
 #inicializa o dicionario com as informações iniciais
 info = inicializa(palavras_normais)
+'''
+
+inicializa(palavras_normais) #cria o dicionario a seguir:
+
+"""
+info['n'] = número de letra da palavra sorteada 
+info['sorteada'] = seleção da palavra sorteada
+info['especuladas'] = adicionar aqui a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
+info['tentativas'] = numero de vidas
+info['sorteadas'] = lista de sorteadas
 
 
-#para marcar as palavras que já foram sorteadas.
-sorteadas = []
+def inicializa(palavras):
+    import random
+    info = {}
 
+    info['n']=len(palavras[0]) #número de letra da palavra sorteada 
+    info['sorteada'] = random.choice(palavras) #seleção da palavra sorteada
+    info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
+    info['tentativas'] = info['n']+1 #numero de vidas
+    info['sorteadas'] = [] #lista de sorteadas
+
+
+    return retorno
+"""
+
+
+##################################### 1o PRINT
 #mostra as informações inciais do jogo
 print('''
      ┏━━━━━━━━━━━━━━━━━━━━━━┓
@@ -19,7 +43,8 @@ print('''
      ┃  Esse é o jogo Termo ┃
      ┗━━━━━━━━━━━━━━━━━━━━━━┛
       ''')
-#print('\n')
+
+#REGRAS
 print('''
  Regras: 
       Você tem 6 tentativas para acertar uma palavra aleatória de 5 letras.
@@ -34,45 +59,49 @@ print('''
   Já tenho uma palavra! vamos, tente adivinhá-la!
 ''')
 
-#informa a quantidade de tentativas restantes ao usuário
-print('Você tem {0} tentativa(s)'.format(6))
+#NUMERO DE VIDAS INICIAIS
+print(f'Você tem {6} tentativa(s)')
 
 #loop principal no qual o jogo vai girar entorno
 
-while info['tentativas'] != 0:
+while info['tentativas'] != 0:  #checa se o jogador ainda tem vida
+    ########AVALIANDO SE A RESPOSTA É VALIDA
     #input inicial que vai perguntar a palavra ao usuário
     resposta = input(" - Qual palavra sugeres? 🤔")
+    
     #remove os espaços em branco 
     resposta = resposta.strip() 
 
-    #confere se a especulada está ou não na lista de palavras viáveis
-    if not resposta in palavras:
+    
+    if not resposta in palavras: #confere se a especulada está ou não na lista de palavras viáveis (palavras)
         print('Desculpe-me, mas não conheço essa palavra')
-    #confere se a palavra tem realmente 5 letras, se não, pede outra
-    elif len(resposta) != 5:
+
+    
+    elif len(resposta) != 5:    #confere se a palavra tem realmente 5 letras, se não, pede outra
         print('Diga apenas palavras de 5 letras!!!')
 
-    #Confere se o usuário já disse essa palavra, caso sim, pede outra
-    elif resposta in info['especuladas'] and info['tentativas'] != 6:
+    
+    elif resposta in info['especuladas'] and info['tentativas'] != 6:    #Confere se o usuário já disse essa palavra, caso sim, pede outra
         print('Poxa, você já me disse essa palavra, cite outra!')
 
-    #Caso seja do tamanho correto e inédita, o loop roda normalmente
-    else:
     
-        #Desconta-se 1 tentativa das que o usuário tem direito
-        info['tentativas'] -= 1 
+    ##### A RESPOSTA É VÁLIDA - Caso seja do tamanho correto e inédita, o loop roda normalmente
+    else:
         
-        #adiciona a resposta do usuário à lista de palavras especuladas
-        info['especuladas'].append(resposta)
+        info['especulada'] = resposta #atualiza o valor da chave especulada
+        info['tentativas'] -= 1     #Desconta-se 1 tentativa das que o usuário tem direito
+        
+        
+        info['especuladas'].append(resposta)    #adiciona a resposta do usuário à lista de palavras especuladas
         
         #confere se a palavra já não foi sorteada
-        if not info['sorteada'] in sorteadas:
+        if not info['sorteada'] in info['sorteadas']:
             
+            info['sorteadas'].append(info['sorteada'])
             #Confere se as letras da especulada com as da sorteada e diz a sua proximidade com ela
             #(vai servir para colorir as letras e dizer se elas são ou não próximas da paalavra sorteada)
-            posicao = inidica_posicao(info['sorteada'], resposta)
-        oi = interface(resposta)
-        sorteadas.append(info['sorteada'])
+            posicao = inidica_posicao(info['sorteada'], resposta) #devolve uma lista das posicoes das letras
+        oi = printando(resposta) #printa a resposta por tentativa
         
 
 ############
