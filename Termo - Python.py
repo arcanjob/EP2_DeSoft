@@ -5,34 +5,6 @@ import random
 #Define a lista de palavras que vão ser usadas no jogo
 palavras_normais = filtra(palavras, 5)
 
-'''
-#inicializa o dicionario com as informações iniciais
-info = inicializa(palavras_normais)
-'''
-
-inicializa(palavras_normais) #cria o dicionario a seguir:
-
-"""
-info['n'] = número de letra da palavra sorteada 
-info['sorteada'] = seleção da palavra sorteada
-info['especuladas'] = adicionar aqui a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
-info['tentativas'] = numero de vidas
-info['sorteadas'] = lista de sorteadas
-
-
-def inicializa(palavras):
-    import random
-    info = {}
-
-    info['n']=len(palavras[0]) #número de letra da palavra sorteada 
-    info['sorteada'] = random.choice(palavras) #seleção da palavra sorteada
-    info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
-    info['tentativas'] = info['n']+1 #numero de vidas
-    info['sorteadas'] = [] #lista de sorteadas
-
-
-    return retorno
-"""
 
 
 ##################################### 1o PRINT
@@ -90,6 +62,9 @@ while info['tentativas'] != 0:  #checa se o jogador ainda tem vida
     ##### A RESPOSTA É VÁLIDA - Caso seja do tamanho correto e inédita, o loop roda normalmente
     else:
         
+        inicializa(, nletras, especulada)
+
+
         info['especulada'] = resposta #atualiza o valor da chave especulada
         info['tentativas'] -= 1     #Desconta-se 1 tentativa das que o usuário tem direito
         

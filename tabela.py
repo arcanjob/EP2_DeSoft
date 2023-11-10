@@ -2,11 +2,6 @@ from palavras import *
 import random
 from formulas_cruas import *
 
-info = {}
-nletras = 5 #escolhendo 5 letras
-resposta = #vai ser dado no termo
-
-
 #definindo a cor
 def cor(numero):
     if int(numero) == 0:
@@ -16,8 +11,9 @@ def cor(numero):
     if int(numero) == 2:
         cor = '\033[90m' #cinza - errou total
 
+##################################DICIONARIO COM TUDO
 
-
+info = {}
 
 def inicializa(palavras_usaveis, nletras, especulada): #cria o dicionário central
     #info['especulada'] = resposta
@@ -51,7 +47,7 @@ def inicializa(palavras_usaveis, nletras, especulada): #cria o dicionário centr
 
 
 
-n = info['n'] - numero de letras
+n = info['n'] #- numero de letras
 ###################################CRIANDO A TABELA DINÂMICA
 def tabela(n): #n = numero de letras
     linhazinha = ' --- '*(n+1) + '\n'

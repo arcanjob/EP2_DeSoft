@@ -26,18 +26,6 @@ def inidica_posicao(sorteada, especulada):
 
 
 #################################  DOIS ERROS 
-info = {}
-def inicializa(palavras):
-    info['especulada'] = resposta
-    info['n']=len(palavras[0]) #número de letra da palavra sorteada 
-    info['sorteada'] = random.choice(palavras) #seleção da palavra sorteada
-    info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
-    info['tentativas'] = info['n']+1 #numero de vidas
-    info['sorteadas'] = [] #lista de sorteadas
-    info['resultado'] = indica_posicao(info['sorteada'], info['especulada'])
-
-    return info
-
 
 #################################   
 
