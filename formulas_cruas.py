@@ -8,7 +8,31 @@ from palavras import *
 especiais = '.;:()=+@!~/|-*><?#$%&_°}{][ªº,'
 abc = 'qwertyuiopasdfghjklzxcvbnm'
 
+def tela_inicial(none):
+    print('''
+        ┏━━━━━━━━━━━━━━━━━━━━━━┓
+        ┃  Seja bem vindo(a)!  ┃
+        ┗━━━━━━━━━━━━━━━━━━━━━━┛
+    
+        ┏━━━━━━━━━━━━━━━━━━━━━━┓
+        ┃ Esse é o jogo termo  ┃
+        ┗━━━━━━━━━━━━━━━━━━━━━━┛
+        ''')
 
+    #REGRAS
+    print('''
+    Regras: 
+        Você tem 6 tentativas para acertar uma palavra aleatória de 5 letras.
+        - A cada tentativa, essa palavra testada terá suas letras coloridas conforme:
+        . VERDE  : a letra está na posição correta;
+        . AMARELO: a palavra tem a letra, mas está na posição errada;
+        . CINZA: a palavra não tem a letra.
+        - Os acentos são ignorados;
+        - As palavras podem possuir letras repetidas.
+    
+    Sorteando uma palavra...
+    Já tenho uma palavra! vamos, tente adivinhá-la!
+    ''')
 
 def inidica_posicao(sorteada, especulada):
 
