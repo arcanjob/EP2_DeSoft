@@ -4,20 +4,7 @@ from palavras import *
 especiais = '.;:()=+@!~/|-*><?#$%&_°}{][ªº,'
 abc = 'qwertyuiopasdfghjklzxcvbnm'
 
-#################################   
-info = {}
 
-    info['n']=len(palavras[0]) #número de letra da palavra sorteada 
-    info['sorteada'] = random.choice(palavras) #seleção da palavra sorteada
-    info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
-    info['tentativas'] = info['n']+1 #numero de vidas
-    info['sorteadas'] = [] #lista de sorteadas
-    info['especulada'] = 
-    info['resultado'] = indica_posicao(info['sorteada'], info['especulada'])
-
-    return retorno
-
-#################################   
 
 def inidica_posicao(sorteada, especulada):
 
@@ -36,6 +23,24 @@ def inidica_posicao(sorteada, especulada):
             retorno.append(1) #letra presente, mas no lugar errado
     
     return retorno        
+
+
+#################################  DOIS ERROS 
+info = {}
+def inicializa(palavras):
+    info['especulada'] = resposta
+    info['n']=len(palavras[0]) #número de letra da palavra sorteada 
+    info['sorteada'] = random.choice(palavras) #seleção da palavra sorteada
+    info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
+    info['tentativas'] = info['n']+1 #numero de vidas
+    info['sorteadas'] = [] #lista de sorteadas
+    info['resultado'] = indica_posicao(info['sorteada'], info['especulada'])
+
+    return info
+
+
+#################################   
+
 
 
 ###############
@@ -70,7 +75,19 @@ for i in range(6): #criando as celulas em forma de dicionario - PARA A INTERFACE
     d[str(i)] = ['      ']
 ###
 
+################################################## DOIS ERROS
+#objetivo - criar uma tabela onde eu consiga somente ir adicionando as letras das palavras especuladas
+####a: criar um dicionario de 6 termos (= o numero de tentativas), com uma lista de 5 elementos "      " (6espaços) - as chaves de cada termo serao string de 0 a 5
+####b: para cada letra, conferir a cor que ela irá receber e a adicionar no dicionario com o endereço: d[numero da linha][posicao da letra na palavra]
+########1°: criar um for que percorre número a número da lista do resultado, via contador (i)
+###########a°: com base no i, comparar o numero com a sua respectiva cor e armazenar isso na variavel "cor"
+###########b°: com base na posição i, selecionar a letra da palavra "resposta" e a anexar dentro da lista da chave que corresponde à sua linha acrescentando a essa letra a variavel 'cor'- 
+#              utilizando o str(*numero da tentativa*) para achar a chave correspondente à lista da linha e o i, para identificar o elemento que será substituido dentro da linha
 
+#com base no dicionario criado, atualizar a tabela, com base nas posicoes dos termos dentro das listas dentro dos dicionarios
+
+
+'''
 def printando(info): # vai dar a resposta
     
     resultado = ''
@@ -92,7 +109,6 @@ def printando(info): # vai dar a resposta
 
         print(tentativa[i])
         i -= 1
-
     
     #isso é o que, de fato, vai ser mostrado para o usuário
     msg = f'''
@@ -113,7 +129,7 @@ def printando(info): # vai dar a resposta
     '''
     
     print(msg)
-
+'''
 
 #########################O DIC DE RESULTADOS
 dr = {} #dicionario do resultado
