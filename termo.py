@@ -40,7 +40,7 @@ palavras_normais = filtra(palavras, nletras)
 print(f'Você tem {nletras+1} tentativa(s)')
 
 # estabelecendo um dicionario x, para rodar a tabela pela primeira vez
-info = {'tentativas': nletras+1;    'especuladas+cores':[];    'ntentativas'=0; 'vidas':nletras } 
+info = {'tentativas': nletras+1,    'especuladas+cores':[],    'ntentativas':0, 'vidas':nletras } 
 
 print(tabela(nletras))
 
