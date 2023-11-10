@@ -1,14 +1,10 @@
 import random
-from palavras import *
-import random
-from tabela import *
-from termo import *
 
 from palavras import *
 especiais = '.;:()=+@!~/|-*><?#$%&_°}{][ªº,'
 abc = 'qwertyuiopasdfghjklzxcvbnm'
 
-def tela_inicial(none):
+def tela_inicial(nada):
     print('''
         ┏━━━━━━━━━━━━━━━━━━━━━━┓
         ┃  Seja bem vindo(a)!  ┃

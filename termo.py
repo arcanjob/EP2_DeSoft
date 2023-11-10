@@ -3,25 +3,30 @@ from formulas_cruas import *
 import random
 from tabela import *
 
+
 #Define a lista de palavras que vão ser usadas no jogo
 
 info = {}
-bruno
+
 ##################################### 1o PRINT
 #mostra as informações inciais do jogo
-inicial = tela_inicial()
+tela_inicial(3)
 
 nletras = 5
 
-palavras_normais = filtra(palavras, nletras)
+palavras_normais = filtra(palavraas, nletras)
 
 #NUMERO DE VIDAS INICIAIS
 print(f'Você tem {nletras+1} tentativa(s)')
 
 # estabelecendo um dicionario x, para rodar a tabela pela primeira vez
-info = {'tentativas': nletras+1,    'especuladas+cores':[],    'ntentativas':0, 'vidas':nletras } 
+info = {}
+info['tentativas']= nletras+1
+info['especuladas+cores'] = []
+info['ntentativas']=0
+info['vidas']= nletras  
 
-print(tabela(nletras))
+tabela(nletras)
 
 i = 0 #estabelecendo um contador
 #loop principal no qual o jogo vai girar entorno
