@@ -3,7 +3,7 @@ from formulas_cruas import *
 import random
 
 #Define a lista de palavras que vão ser usadas no jogo
-palavras_normais = filtra(palavras, 5)
+
 
 
 
@@ -31,9 +31,17 @@ print('''
   Já tenho uma palavra! vamos, tente adivinhá-la!
 ''')
 
-#NUMERO DE VIDAS INICIAIS
-print(f'Você tem {6} tentativa(s)')
+nletras = 5
 
+palavras_normais = filtra(palavras, nletras)
+
+#NUMERO DE VIDAS INICIAIS
+print(f'Você tem {nletras+1} tentativa(s)')
+
+# estabelecendo um dicionario x, para rodar a tabela pela primeira vez
+info = {'tentativas': nletras+1;    'especuladas+cores':[];    'ntentativas'=0; 'vidas':nletras } 
+
+print(tabela(nletras))
 
 i = 0 #estabelecendo um contador
 #loop principal no qual o jogo vai girar entorno
@@ -41,36 +49,38 @@ i = 0 #estabelecendo um contador
 while info['tentativas'] != 0:  #checa se o jogador ainda tem vida
     ########AVALIANDO SE A RESPOSTA É VALIDA
     #input inicial que vai perguntar a palavra ao usuário
-    resposta = input(" - Qual palavra sugeres? 🤔")
+    especulada = input(" - Qual palavra sugeres? 🤔")
     i+=1 #contando as tentativas
     #remove os espaços em branco 
-    resposta = resposta.strip() 
+    especulada = especulada.strip() 
 
     
-    if not resposta in palavras: #confere se a especulada está ou não na lista de palavras viáveis (palavras)
+    if not especulada in palavras: #confere se a especulada está ou não na lista de palavras viáveis (palavras)
         print('Desculpe-me, mas não conheço essa palavra')
 
     
-    elif len(resposta) != 5:    #confere se a palavra tem realmente 5 letras, se não, pede outra
+    elif len(especulada) != nletras:    #confere se a palavra tem realmente 5 letras, se não, pede outra
         print('Diga apenas palavras de 5 letras!!!')
 
     
-    elif resposta in info['especuladas'] and info['tentativas'] != 6:    #Confere se o usuário já disse essa palavra, caso sim, pede outra
+    elif especulada in info['especuladas'] and info['tentativas'] != 6:    #Confere se o usuário já disse essa palavra, caso sim, pede outra
         print('Poxa, você já me disse essa palavra, cite outra!')
 
     
     ##### A RESPOSTA É VÁLIDA - Caso seja do tamanho correto e inédita, o loop roda normalmente
     else:
         
-        inicializa(, nletras, especulada)
+        inicializa(palavras_normais, nletras, especulada)
 
 
-        info['especulada'] = resposta #atualiza o valor da chave especulada
-        info['tentativas'] -= 1     #Desconta-se 1 tentativa das que o usuário tem direito
+        #info['especulada'] = especulada #atualiza o valor da chave especulada
+        #info['tentativas'] -= 1     #Desconta-se 1 tentativa das que o usuário tem direito
         
         
-        info['especuladas'].append(resposta)    #adiciona a resposta do usuário à lista de palavras especuladas
+        info['especuladas'].append(especulada)    #adiciona a resposta do usuário à lista de palavras especuladas
         info['especuladas+cores'].append(info['cor+especulada'])
+
+
 
         #confere se a palavra já não foi sorteada
         if not info['sorteada'] in info['sorteadas']:
@@ -78,8 +88,8 @@ while info['tentativas'] != 0:  #checa se o jogador ainda tem vida
             info['sorteadas'].append(info['sorteada'])
             #Confere se as letras da especulada com as da sorteada e diz a sua proximidade com ela
             #(vai servir para colorir as letras e dizer se elas são ou não próximas da paalavra sorteada)
-            posicao = inidica_posicao(info['sorteada'], resposta) #devolve uma lista das posicoes das letras
-        oi = printando(resposta) #printa a resposta por tentativa
+            posicao = inidica_posicao(info['sorteada'], especulada) #devolve uma lista das posicoes das letras
+        oi = printando(especulada) #printa a resposta por tentativa
         
 
 ############

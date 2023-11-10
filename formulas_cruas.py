@@ -56,12 +56,7 @@ def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERE
 
 
 ##############################################PRINT
-#####VAI LÁ PRA CIMA
-d = {}
 
-for i in range(6): #criando as celulas em forma de dicionario - PARA A INTERFACE
-    d[str(i)] = ['      ']
-###
 
 ################################################## DOIS ERROS
 #objetivo - criar uma tabela onde eu consiga somente ir adicionando as letras das palavras especuladas
@@ -120,6 +115,7 @@ def printando(info): # vai dar a resposta
 '''
 
 #########################O DIC DE RESULTADOS
+'''
 dr = {} #dicionario do resultado
 
 
@@ -127,7 +123,7 @@ dr = {} #dicionario do resultado
 
 
 printando(0, 'pedra', 'perna')
-
+'''
 
 
 

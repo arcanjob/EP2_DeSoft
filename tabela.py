@@ -47,6 +47,10 @@ def inicializa(palavras_usaveis, nletras, especulada): #cria o dicionário centr
 
 
 
+
+
+
+
 n = info['n'] #- numero de letras
 ###################################CRIANDO A TABELA DINÂMICA
 def tabela(n): #n = numero de letras
@@ -63,6 +67,6 @@ def tabela(n): #n = numero de letras
         tabela += linha + '\n' + linhazinha
         
     if info['ntentativas'] != info['tentativas']: #criando as células vazias
-        tabela += '|   '*n +'\n'+ linhazinha*info['vida']
+        tabela += '|   '*n +'\n'+ linhazinha*info['vidas']
 
     return tabela
