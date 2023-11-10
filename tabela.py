@@ -1,11 +1,11 @@
 
 import random
-
+from formulas_cruas import *
 
 #definindo a cor
 def cor(numero):
     if int(numero) == 0:
-            cor = '\033[92m' #verde - acertou a posição
+        cor = '\033[92m' #verde - acertou a posição
     if int(numero) == 1:
         cor = '\033[93m' #amarelo - errou a posição
     if int(numero) == 2:
@@ -32,13 +32,14 @@ def inicializa(palavras_usaveis, nletras, especulada): #cria o dicionário centr
 
 
     info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
-    info['resultado'] = indica_posicao(info['sorteada'], info['especulada'])
+    info['resultado'] = inidica_posicao(info['sorteada'], info['especulada'])
     
     info['cor+especulada'] = []
     for i in range(len(info['especulada'])):
         cor_letra = cor(info['resultado'][i])
         info['cor+especulada'].append([info['especulada'][i]+cor_letra])
     
+
     info['especuladas+cores'] = []
 
     return info

@@ -40,12 +40,12 @@ while info['tentativas'] != 0:  #checa se o jogador ainda tem vida
     especulada = especulada.strip() 
 
     
-    if not especulada in palavras: #confere se a especulada está ou não na lista de palavras viáveis (palavras)
+    if not especulada in palavraas: #confere se a especulada está ou não na lista de palavras viáveis (palavras)
         print('Desculpe-me, mas não conheço essa palavra')
 
     
     elif len(especulada) != nletras:    #confere se a palavra tem realmente 5 letras, se não, pede outra
-        print('Diga apenas palavras de 5 letras!!!')
+        print(f'Diga apenas palavras de {nletras} letras!!!')
 
     
     elif especulada in info['especuladas'] and info['tentativas'] != 6:    #Confere se o usuário já disse essa palavra, caso sim, pede outra
