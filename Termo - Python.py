@@ -4,7 +4,7 @@ import random
 
 #Define a lista de palavras que vão ser usadas no jogo
 
-
+info = {}
 
 
 ##################################### 1o PRINT
@@ -89,7 +89,8 @@ while info['tentativas'] != 0:  #checa se o jogador ainda tem vida
             #Confere se as letras da especulada com as da sorteada e diz a sua proximidade com ela
             #(vai servir para colorir as letras e dizer se elas são ou não próximas da paalavra sorteada)
             posicao = inidica_posicao(info['sorteada'], especulada) #devolve uma lista das posicoes das letras
-        oi = printando(especulada) #printa a resposta por tentativa
+        
+        print(tabela(nletras))
         
 
 ############
