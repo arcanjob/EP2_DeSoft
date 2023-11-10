@@ -26,18 +26,6 @@ def inidica_posicao(sorteada, especulada):
 
 
 #################################  DOIS ERROS 
-info = {}
-def inicializa(palavras):
-    info['especulada'] = resposta
-    info['n']=len(palavras[0]) #número de letra da palavra sorteada 
-    info['sorteada'] = random.choice(palavras) #seleção da palavra sorteada
-    info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
-    info['tentativas'] = info['n']+1 #numero de vidas
-    info['sorteadas'] = [] #lista de sorteadas
-    info['resultado'] = indica_posicao(info['sorteada'], info['especulada'])
-
-    return info
-
 
 #################################   
 
@@ -68,12 +56,7 @@ def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERE
 
 
 ##############################################PRINT
-#####VAI LÁ PRA CIMA
-d = {}
 
-for i in range(6): #criando as celulas em forma de dicionario - PARA A INTERFACE
-    d[str(i)] = ['      ']
-###
 
 ################################################## DOIS ERROS
 #objetivo - criar uma tabela onde eu consiga somente ir adicionando as letras das palavras especuladas
@@ -132,6 +115,7 @@ def printando(info): # vai dar a resposta
 '''
 
 #########################O DIC DE RESULTADOS
+'''
 dr = {} #dicionario do resultado
 
 
@@ -139,7 +123,7 @@ dr = {} #dicionario do resultado
 
 
 printando(0, 'pedra', 'perna')
-
+'''
 
 
 
