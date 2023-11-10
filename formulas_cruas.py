@@ -1,4 +1,8 @@
 import random
+from palavras import *
+import random
+from tabela import *
+from termo import *
 
 from palavras import *
 especiais = '.;:()=+@!~/|-*><?#$%&_°}{][ªº,'

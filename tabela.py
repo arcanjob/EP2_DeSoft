@@ -1,6 +1,7 @@
 from palavras import *
-import random
 from formulas_cruas import *
+import random
+from termo import *
 
 #definindo a cor
 def cor(numero):
