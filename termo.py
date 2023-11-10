@@ -6,7 +6,7 @@ from tabela import *
 #Define a lista de palavras que vão ser usadas no jogo
 
 info = {}
-
+bruno
 ##################################### 1o PRINT
 #mostra as informações inciais do jogo
 inicial = tela_inicial()
