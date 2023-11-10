@@ -67,8 +67,13 @@ for i in range(6): #criando as celulas em forma de dicionario - PARA A INTERFACE
     d[str(i)] = ['      ']
 ###
 
-def printando(ntentativa, tentativa): # vai dar a resposta
+
+def printando(ntentativa, tentativa, sorteada): # vai dar a resposta
     
+    resultado = ''
+    for ivalor in range(5):
+        resultado += str(inidica_posicao(sorteada, tentativa)[ivalor])
+
     def cor(nada):
         for i in range(len(tentativa)):
             if tentativa[i] == 0:
@@ -78,27 +83,23 @@ def printando(ntentativa, tentativa): # vai dar a resposta
             
             if tentativa[i] == 2:
                 cor = '\033[90m' #cinza - errou total
-
-            return cor
+            d[str(ntentativa)] = letra + cor(1)
+        
     
-    #vai criar um dicionario para as respostas
-    for iletra in range(len(tentativa)):
-        d[str(ntentativa)] = tentativa[iletra] + cor
-
     #isso é o que, de fato, vai ser mostrado para o usuário
     msg = f'''
     ┏━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┓
-    ┃  {d[0][0]} ┃  {d[0][1]} ┃  {d[0][2]} ┃  {d[0][3]} ┃  {d[0][4]} ┃    
+    ┃  {d['0'][0]} ┃  {d['0'][1]} ┃  {d['0'][2]} ┃  {d['0'][3]} ┃  {d['0'][4]} ┃    
     ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
-    ┃  {d[1][0]} ┃  {d[2][1]} ┃  {d[2][2]} ┃  {d[2][3]} ┃  {d[1][4]} ┃    
+    ┃  {d['1'][0]} ┃  {d['2'][1]} ┃  {d['2'][2]} ┃  {d['2'][3]} ┃  {d['1'][4]} ┃    
     ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
-    ┃  {d[2][0]} ┃  {d[2][1]} ┃  {d[2][2]} ┃  {d[2][3]} ┃  {d[2][4]} ┃    
+    ┃  {d['2'][0]} ┃  {d['2'][1]} ┃  {d['2'][2]} ┃  {d['2'][3]} ┃  {d['2'][4]} ┃    
     ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
-    ┃  {d[3][0]} ┃ {d[3][1]} ┃  {d[3][2]} ┃  {d[3][3]} ┃  {d[3][4]} ┃    
+    ┃  {d['3'][0]} ┃ {d['3'][1]} ┃  {d['3'][2]} ┃  {d['3'][3]} ┃  {d['3'][4]} ┃    
     ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
-    ┃  {d[4][0]} ┃  {d[4][1]}┃  {d[4][2]} ┃  {d[4][3]} ┃  {d[4][4]} ┃
+    ┃  {d['4'][0]} ┃  {d['4'][1]}┃  {d['4'][2]} ┃  {d['4'][3]} ┃  {d['4'][4]} ┃
     ┠━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┨
-    ┃  {d[5][0]} ┃  {d[5][1]} ┃  {d[5][2]} ┃  {d[5][3]} ┃  {d[5][4]} ┃      
+    ┃  {d['5'][0]} ┃  {d['5'][1]} ┃  {d['5']['2']} ┃  {d['5'][3]} ┃  {d['5'][4]} ┃      
     ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
 
     '''
@@ -109,19 +110,13 @@ def printando(ntentativa, tentativa): # vai dar a resposta
 #########################O DIC DE RESULTADOS
 dr = {} #dicionario do resultado
 
-def dic_dos_resultados (tentativa):
+
+
+
+
+printando(, 'pedra', 'perna')
 
 
 
 
 
-
-
-
-for i in range(6):
-
-"""
-1 = Amarelo: '\033[93m'
-0 = Verde: '\033[92m'
-2 = cinza: '\033[90m'
-"""
