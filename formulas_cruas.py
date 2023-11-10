@@ -74,17 +74,22 @@ def printando(ntentativa, tentativa, sorteada): # vai dar a resposta
     for ivalor in range(5):
         resultado += str(inidica_posicao(sorteada, tentativa)[ivalor])
 
-    def cor(nada):
-        for i in range(len(tentativa)):
-            if tentativa[i] == 0:
-                cor = '\033[92m' #verde - acertou a posição
-            if tentativa[i] == 1:
-                cor = '\033[93m' #amarelo - errou a posição
-            
-            if tentativa[i] == 2:
-                cor = '\033[90m' #cinza - errou total
-            d[str(ntentativa)] = letra + cor(1)
-        
+    print(resultado)
+    #def cor(nada):
+    i = 6
+    while i > 6:
+        print(resultado[i])
+        if int(resultado[i]) == 0:
+            cor = '\033[92m' #verde - acertou a posição
+        if int(resultado[i]) == 1:
+            cor = '\033[93m' #amarelo - errou a posição
+        if int(resultado[i]) == 2:
+            cor = '\033[90m' #cinza - errou total
+        d[str(ntentativa)] = tentativa[i] + cor
+
+        print(tentativa[i])
+        i -= 1
+
     
     #isso é o que, de fato, vai ser mostrado para o usuário
     msg = f'''
@@ -114,7 +119,7 @@ dr = {} #dicionario do resultado
 
 
 
-printando(, 'pedra', 'perna')
+printando(0, 'pedra', 'perna')
 
 
 
