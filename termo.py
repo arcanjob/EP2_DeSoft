@@ -2,8 +2,6 @@
 import random
 from palavras import *
 
-
-
 especiais = '.;:()=+@!~/|-*><?#$%&_°}{][ªº,'
 abc = 'qwertyuiopasdfghjklzxcvbnm'
 
@@ -106,11 +104,6 @@ def inicializa(palavras_usaveis, nletras, especuladaa): #cria o dicionário cent
     #print(f'n = {n}')
     #N: OK
 
-    info['sorteada'] = random.choice(palavras_usaveis) #seleção da palavra sorteada
-    sorteada = info['sorteada']
-    #print(f'sorteada = {sorteada}')
-    #SORTEADA: OK 
-
     
     info['sorteadas'] = [] #lista de sorteadas
     sorteadas = info['sorteadas']
@@ -129,6 +122,13 @@ def inicializa(palavras_usaveis, nletras, especuladaa): #cria o dicionário cent
 
     info['tentativas'] = info['n']+1 #numero de vidas inicial
     tentativas = info['tentativas']
+    
+    info['sorteada'] = random.choice(palavras_usaveis) #seleção da palavra sorteada
+    sorteada = info['sorteada']
+    
+    #print(f'sorteada = {sorteada}')
+    #SORTEADA: OK 
+    
     #print(f'tentativas = {tentativas}')
     #TENTATIVAS: OK
 
@@ -154,8 +154,10 @@ def inicializa(palavras_usaveis, nletras, especuladaa): #cria o dicionário cent
     #print(f'corespeculada0 = {corespeculada0}')
     for i in range(len(info['especulada'])):
         cor_letra = cor(info['resultado'][i])
-        info['cor+especulada'].append([info['especulada'][i]+str(cor_letra)])
-    corespeculada1 = info['cor+especulada']
+        info['cor+especulada'].append(info['especulada'][i]+str(cor_letra))
+    corespeculada1 = " ".join(info['cor+especulada'])
+
+    
     #print(f'cor+especulada = {corespeculada1}')
     #COR+ESPECULADA: OK
 
@@ -164,10 +166,8 @@ def inicializa(palavras_usaveis, nletras, especuladaa): #cria o dicionário cent
     #especuladascores = info['especuladas+cores']
     #print(f'especuladas+cores = {especuladascores}')
     #ESPECULADAS+CORES: OK
-
+    print(info['sorteada'])
     return info
-
-
 
 import random
 
@@ -310,7 +310,7 @@ while info['vidas'] != 0:  #checa se o jogador ainda tem vida
         info['vidas'] -= 1     #Desconta-se 1 tentativa das que o usuário tem direito
         
         info['especuladas'].append(especulada)    #adiciona a resposta do usuário à lista de palavras especuladas
-        corespeculadaa = info['cor+especulada']
+        corespeculadaa = " ".join(info['cor+especulada'])
         print(corespeculadaa)
         info['especuladas+cores'].append(info['cor+especulada'])
 
