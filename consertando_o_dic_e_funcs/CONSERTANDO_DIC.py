@@ -77,65 +77,67 @@ def inicializa(palavras_usaveis, nletras, especuladaa): #cria o dicionário cent
     #info['especulada'] = resposta
     info['n']= nletras #número de letra da palavra sorteada 
     n = info['n']
-    print(f'n = {n}')
-
+    #print(f'n = {n}')
     #N: OK
 
     info['sorteada'] = random.choice(palavras_usaveis) #seleção da palavra sorteada
     sorteada = info['sorteada']
-    print(f'sorteada = {sorteada}')
+    #print(f'sorteada = {sorteada}')
     #SORTEADA: OK
 
     
     info['sorteadas'] = [] #lista de sorteadas
     sorteadas = info['sorteadas']
-    print(f'sorteadas = {sorteadas}')
+    #print(f'sorteadas = {sorteadas}')
     #SORTEADAS: OK
 
     info['especulada'] = especuladaa
     especulada = info['especulada']
-    print(f' especulada = {especulada}')
+    #print(f' especulada = {especulada}')
     #ESPECULADA: OK
 
     info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
     especuladas = info['especuladas']
-    print(f'especuladas = {especuladas}')
+    #print(f'especuladas = {especuladas}')
     #ESPECULADAS: OK
 
     info['tentativas'] = info['n']+1 #numero de vidas inicial
     tentativas = info['tentativas']
-    print(f'tentativas = {tentativas}')
+    #print(f'tentativas = {tentativas}')
     #TENTATIVAS: OK
 
     info['ntentativas'] = len(info['especuladas'])
     ntentativas = info['ntentativas']
-    print(f'ntentativas = {ntentativas}')
+    #print(f'ntentativas = {ntentativas}')
     #TENTATIVAS: OK
 
     info['vidas'] = info['tentativas'] - info['ntentativas']
     vidas = info['vidas']
-    print(f'vidas = {vidas}')
+    #print(f'vidas = {vidas}')
     #VIDAS: OK
 
     posicao = inidica_posicao(sorteada, especulada)
     info['resultado'] = posicao
     resultado = info['resultado']
-    print(f'resultado = {resultado}')
+    #print(f'resultado = {resultado}')
+    #RESULTADO: OK
 
 
     info['cor+especulada'] = []
     corespeculada0 = info['cor+especulada']
-    print(f'corespeculada0 = {corespeculada0}')
+    #print(f'corespeculada0 = {corespeculada0}')
     for i in range(len(info['especulada'])):
         cor_letra = cor(info['resultado'][i])
         info['cor+especulada'].append([info['especulada'][i]+str(cor_letra)])
     corespeculada1 = info['cor+especulada']
-    print(f'cor+especulada = {corespeculada1}')
+    #print(f'cor+especulada = {corespeculada1}')
+    #COR+ESPECULADA: OK
 
 
     info['especuladas+cores'] = []
     especuladascores = info['especuladas+cores']
-    print(f'especuladas+cores = {especuladascores}')
+    #print(f'especuladas+cores = {especuladascores}')
+    #ESPECULADAS+CORES: OK
 
     return info
 
