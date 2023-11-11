@@ -15,6 +15,7 @@ def tela_inicial(nada):
         ┗━━━━━━━━━━━━━━━━━━━━━━┛
         ''')
     #REGRAS
+    
     print('''
     Regras: 
         Você tem 6 tentativas para acertar uma palavra aleatória de 5 letras.
