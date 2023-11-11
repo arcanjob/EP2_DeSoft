@@ -107,7 +107,7 @@ def inicializa(palavras_usaveis, nletras, especuladaa): #cria o dicionário cent
     info['sorteada'] = random.choice(palavras_usaveis) #seleção da palavra sorteada
     sorteada = info['sorteada']
     #print(f'sorteada = {sorteada}')
-    #SORTEADA: OK
+    #SORTEADA: OK 
 
     
     info['sorteadas'] = [] #lista de sorteadas
