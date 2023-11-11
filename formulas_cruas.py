@@ -1,19 +1,19 @@
 import random
 
 from palavras import *
+
 especiais = '.;:()=+@!~/|-*><?#$%&_°}{][ªº,'
 abc = 'qwertyuiopasdfghjklzxcvbnm'
 
 def tela_inicial(nada):
+    
     print('''
         ┏━━━━━━━━━━━━━━━━━━━━━━┓
         ┃  Seja bem vindo(a)!  ┃
-        ┗━━━━━━━━━━━━━━━━━━━━━━┛
-        ┏━━━━━━━━━━━━━━━━━━━━━━┓
+        ┃                      ┃
         ┃ Esse é o jogo termo  ┃
         ┗━━━━━━━━━━━━━━━━━━━━━━┛
         ''')
-
     #REGRAS
     print('''
     Regras: 
