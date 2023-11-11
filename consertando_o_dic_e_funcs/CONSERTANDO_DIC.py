@@ -2,7 +2,6 @@
 
 import random
 from palavraaas import *
-
 print(len(palavraas))
 
 def inidica_posicao(sorteada, especulada):
@@ -28,8 +27,7 @@ posicao = inidica_posicao('perda', 'pedra')
 print(posicao)
 #################################  DOIS ERROS 
 
-#################################   
-
+#################################  
 
 
 ###############
