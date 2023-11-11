@@ -51,30 +51,7 @@ def inidica_posicao(sorteada, especulada):
 #################################  DOIS ERROS 
    
 ###############
-'''
-def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERES ESPECIAIS E DEVOLVE MINUSCULO
 
-    abc = 'qwertyuiopasdfghjklzxcvbnm'
-    
-    palavrasv2 = [] #criando uma lista de palavra vazia
-    for i in range(len(palavras)): #rodando a lista de palavras
-        palavrasv2.append('') 
-        #checando se há um caractere especial
-        palavras[i] = palavras[i].lower() #deixando todas as palavras minusculas
-        for letra in palavras[i]:
-            if letra in abc:  #testando se
-                 é caractere especial
-                palavrasv2[i] += letra #formando a palavra denovo
-        #a palavra já foi formada
-
-    palavrasv3 = []
-
-    for i in range(len(palavrasv2)): #rodando a nova lista de palavras
-        if len(palavrasv2[i]) == ndigitos and palavrasv2[i]not in palavrasv3: #palavra com ndigitos e não repetida
-            palavrasv3.append(palavrasv2[i])
-
-    return palavrasv3
-'''
 def filtra(palavras, numero):
     print(palavras)
     normal = []
