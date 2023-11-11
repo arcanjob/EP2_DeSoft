@@ -1,7 +1,8 @@
 from palavras import *
 from formulas_cruas import *
+from print_inicial_tabela import *
 import random
-from tabela import *
+
 
 
 #Define a lista de palavras que vão ser usadas no jogo
