@@ -12269,3 +12269,6 @@ palavraas = [
     "zurrarieis", "zurrarmo", "zurrarmos", "zurras", "zurrasse", "zurrasseis", "zurrassem", "zurrassemos", "zurrasses", "zurraste", "zurrastes", "zurrava", "zurravam", "zurravamos", "zurravas", "zurraveis", "zurre", "zurrei", "zurreis", "zurrem", 
     "zurremo", "zurremos", "zurres", "zurro", "zurros", "zurrou", 
 ]
+
+
+print(len(palavraas))

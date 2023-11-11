@@ -11,27 +11,30 @@ def cor(numero):
     if int(numero) == 2:
         cor = '\033[90m' #cinza - errou total
 
+    return cor
+
 ##################################DICIONARIO COM TUDO
 
 info = {}
 
 def inicializa(palavras_usaveis, nletras, especulada): #cria o dicionário central
+    global info
     #info['especulada'] = resposta
     info['n']= nletras #número de letra da palavra sorteada 
 
     info['sorteada'] = random.choice(palavras_usaveis) #seleção da palavra sorteada
     info['sorteadas'] = [] #lista de sorteadas
 
+    info['especulada'] = especulada
+    info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
     
     
-    info['tentativas'] = info['n']+1 #numero de vidas
+    info['tentativas'] = info['n']+1 #numero de vidas inicial
     info['ntentativas'] = len(info['especuladas'])
     info['vidas'] = info['tentativas'] - info['ntentativas']
     
-    info['especulada'] = especulada
 
 
-    info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
     info['resultado'] = inidica_posicao(info['sorteada'], info['especulada'])
     
     info['cor+especulada'] = []
@@ -44,6 +47,7 @@ def inicializa(palavras_usaveis, nletras, especulada): #cria o dicionário centr
 
     return info
 
+print(inicializa(palavraas, 5, "vidro"))
 
 
 ###################################CRIANDO A TABELA DINÂMICA

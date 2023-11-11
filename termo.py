@@ -24,14 +24,15 @@ info = {}
 info['tentativas']= nletras+1
 info['especuladas+cores'] = []
 info['ntentativas']=0
-info['vidas']= nletras  
+info['vidas']= nletras  +1
+info['especuladas'] = [] 
 
-tabela(nletras)
+#tabela(nletras)
 
 i = 0 #estabelecendo um contador
 #loop principal no qual o jogo vai girar entorno
 
-while info['tentativas'] != 0:  #checa se o jogador ainda tem vida
+while info['vidas'] != 0:  #checa se o jogador ainda tem vida
     ########   AVALIANDO SE A RESPOSTA É VALIDA
     #input inicial que vai perguntar a palavra ao usuário
     especulada = input(" - Qual palavra sugeres? 🤔")
@@ -48,7 +49,7 @@ while info['tentativas'] != 0:  #checa se o jogador ainda tem vida
         print(f'Diga apenas palavras de {nletras} letras!!!')
 
     
-    elif especulada in info['especuladas'] and info['tentativas'] != 6:    #Confere se o usuário já disse essa palavra, caso sim, pede outra
+    elif especulada in info['especuladas'] and info['vidas'] != 6:    #Confere se o usuário já disse essa palavra, caso sim, pede outra
         print('Poxa, você já me disse essa palavra, cite outra!')
 
     
@@ -63,6 +64,7 @@ while info['tentativas'] != 0:  #checa se o jogador ainda tem vida
         
         
         info['especuladas'].append(especulada)    #adiciona a resposta do usuário à lista de palavras especuladas
+        print(info['cor+especulada'])
         info['especuladas+cores'].append(info['cor+especulada'])
 
 
@@ -73,7 +75,7 @@ while info['tentativas'] != 0:  #checa se o jogador ainda tem vida
             info['sorteadas'].append(info['sorteada'])
             #Confere se as letras da especulada com as da sorteada e diz a sua proximidade com ela
             #(vai servir para colorir as letras e dizer se elas são ou não próximas da paalavra sorteada)
-            posicao = inidica_posicao(info['sorteada'], especulada) #devolve uma lista das posicoes das letras
+            #posicao = inidica_posicao(info['sorteada'], especulada) #devolve uma lista das posicoes das letras
         
         print(tabela(nletras))
         

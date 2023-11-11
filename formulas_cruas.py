@@ -80,3 +80,4 @@ def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERE
 
 
 
+
