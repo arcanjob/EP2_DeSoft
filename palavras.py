@@ -12270,5 +12270,3 @@ palavraas = [
     "zurremo", "zurremos", "zurres", "zurro", "zurros", "zurrou", 
 ]
 
-
-print(len(palavraas))

@@ -30,6 +30,7 @@ info['especuladas'] = []
 
 #tabela(nletras)
 
+
 i = 0 #estabelecendo um contador
 #loop principal no qual o jogo vai girar entorno
 
@@ -41,7 +42,7 @@ while info['vidas'] != 0:  #checa se o jogador ainda tem vida
     #remove os espaços em branco 
     especulada = especulada.strip() 
 
-    
+
     if not especulada in palavraas: #confere se a especulada está ou não na lista de palavras viáveis (palavras)
         print('Desculpe-me, mas não conheço essa palavra')
 
@@ -57,17 +58,16 @@ while info['vidas'] != 0:  #checa se o jogador ainda tem vida
     ##### A RESPOSTA É VÁLIDA - Caso seja do tamanho correto e inédita, o loop roda normalmente
     else:
         
-        inicializa(palavras_normais, nletras, especulada)
+        info = inicializa(palavras_normais, nletras, especulada)
 
 
-        #info['especulada'] = especulada #atualiza o valor da chave especulada
-        #info['tentativas'] -= 1     #Desconta-se 1 tentativa das que o usuário tem direito
+        info['vidas'] -= 1     #Desconta-se 1 tentativa das que o usuário tem direito
         
         
         info['especuladas'].append(especulada)    #adiciona a resposta do usuário à lista de palavras especuladas
-        print(info['cor+especulada'])
+        corespeculadaa = info['cor+especulada']
+        print(corespeculadaa)
         info['especuladas+cores'].append(info['cor+especulada'])
-
 
 
         #confere se a palavra já não foi sorteada
@@ -78,7 +78,9 @@ while info['vidas'] != 0:  #checa se o jogador ainda tem vida
             #(vai servir para colorir as letras e dizer se elas são ou não próximas da paalavra sorteada)
             #posicao = inidica_posicao(info['sorteada'], especulada) #devolve uma lista das posicoes das letras
         
-        print(tabela(nletras))
+        #print(info)
+        
+        #print(tabela(nletras))
         
 
 ############

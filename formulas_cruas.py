@@ -79,6 +79,8 @@ def cor(numero):
 
 info = {}
 
+
+
 def inicializa(palavras_usaveis, nletras, especuladaa): #cria o dicionário central
     global info
     #info['especulada'] = resposta
@@ -103,8 +105,8 @@ def inicializa(palavras_usaveis, nletras, especuladaa): #cria o dicionário cent
     #print(f' especulada = {especulada}')
     #ESPECULADA: OK
 
-    info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
-    especuladas = info['especuladas']
+    #info['especuladas'] = [] #adicionar a palavra especulada, se ela tiver sido aprovada (se nao foi testada e se está na lista)
+    #especuladas = info['especuladas']
     #print(f'especuladas = {especuladas}')
     #ESPECULADAS: OK
 
@@ -141,14 +143,11 @@ def inicializa(palavras_usaveis, nletras, especuladaa): #cria o dicionário cent
     #COR+ESPECULADA: OK
 
 
-    info['especuladas+cores'] = []
-    especuladascores = info['especuladas+cores']
+    #info['especuladas+cores'] = []
+    #especuladascores = info['especuladas+cores']
     #print(f'especuladas+cores = {especuladascores}')
     #ESPECULADAS+CORES: OK
 
     return info
-
-
-
 
 
