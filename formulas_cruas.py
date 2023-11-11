@@ -5,15 +5,14 @@ especiais = '.;:()=+@!~/|-*><?#$%&_°}{][ªº,'
 abc = 'qwertyuiopasdfghjklzxcvbnm'
 
 def tela_inicial(nada):
+    
     print('''
         ┏━━━━━━━━━━━━━━━━━━━━━━┓
         ┃  Seja bem vindo(a)!  ┃
-        ┗━━━━━━━━━━━━━━━━━━━━━━┛
-        ┏━━━━━━━━━━━━━━━━━━━━━━┓
+        ┃                      ┃
         ┃ Esse é o jogo termo  ┃
         ┗━━━━━━━━━━━━━━━━━━━━━━┛
         ''')
-
     #REGRAS
     print('''
     Regras: 
@@ -49,11 +48,7 @@ def inidica_posicao(sorteada, especulada):
 
 
 #################################  DOIS ERROS 
-
-#################################   
-
-
-
+   
 ###############
 def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERES ESPECIAIS E DEVOLVE MINUSCULO
 
@@ -76,8 +71,3 @@ def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERE
             palavrasv3.append(palavrasv2[i])
 
     return palavrasv3
-
-
-
-
-

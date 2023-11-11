@@ -5,11 +5,11 @@ from formulas_cruas import *
 #definindo a cor
 def cor(numero):
     if int(numero) == 0:
-        cor = '\033[92m' #verde - acertou a posição
+        cor = '\033[92m' #verde - (acertou a posição)
     if int(numero) == 1:
-        cor = '\033[93m' #amarelo - errou a posição
+        cor = '\033[93m' #amarelo - (errou a posição)
     if int(numero) == 2:
-        cor = '\033[90m' #cinza - errou total
+        cor = '\033[90m' #cinza - (errou total)
 
     return cor
 
@@ -36,12 +36,12 @@ def inicializa(palavras_usaveis, nletras, especulada): #cria o dicionário centr
 
 
     info['resultado'] = inidica_posicao(info['sorteada'], info['especulada'])
-    
+    info['resultado'] = [1,1,1,1,1,1]
     info['cor+especulada'] = []
     for i in range(len(info['especulada'])):
         cor_letra = cor(info['resultado'][i])
         info['cor+especulada'].append([info['especulada'][i]+cor_letra])
-    
+        
 
     info['especuladas+cores'] = []
 
