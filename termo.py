@@ -1,6 +1,9 @@
 from palavras import *
+
 from formulas_cruas import *
+
 from print_inicial_tabela import *
+
 import random
 
 
