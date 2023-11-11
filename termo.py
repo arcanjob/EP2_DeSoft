@@ -20,6 +20,12 @@ print(f'Você tem {nletras+1} tentativa(s)')
 
 
 # estabelecendo um dicionario x, para rodar a tabela pela primeira vez
+info = {}
+info['tentativas']= nletras+1
+info['especuladas+cores'] = []
+info['ntentativas'] =0
+info['vidas']= nletras  +1
+info['especuladas'] = [] 
 
 
 #tabela(nletras)

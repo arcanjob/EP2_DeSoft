@@ -1,6 +1,7 @@
 import random
-
 from palavras import *
+
+
 
 especiais = '.;:()=+@!~/|-*><?#$%&_°}{][ªº,'
 abc = 'qwertyuiopasdfghjklzxcvbnm'
