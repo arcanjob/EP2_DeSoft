@@ -4,7 +4,6 @@ from print_inicial_tabela import *
 import random
 
 
-
 #Define a lista de palavras que vão ser usadas no jogo
 
 info = {}
