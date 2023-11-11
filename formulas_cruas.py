@@ -1,6 +1,7 @@
 import random
 
 from palavras import *
+
 especiais = '.;:()=+@!~/|-*><?#$%&_°}{][ªº,'
 abc = 'qwertyuiopasdfghjklzxcvbnm'
 
@@ -50,6 +51,7 @@ def inidica_posicao(sorteada, especulada):
 #################################  DOIS ERROS 
    
 ###############
+'''
 def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERES ESPECIAIS E DEVOLVE MINUSCULO
 
     abc = 'qwertyuiopasdfghjklzxcvbnm'
@@ -60,7 +62,8 @@ def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERE
         #checando se há um caractere especial
         palavras[i] = palavras[i].lower() #deixando todas as palavras minusculas
         for letra in palavras[i]:
-            if letra in abc:  #testando se é caractere especial
+            if letra in abc:  #testando se
+                 é caractere especial
                 palavrasv2[i] += letra #formando a palavra denovo
         #a palavra já foi formada
 
@@ -71,3 +74,16 @@ def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERE
             palavrasv3.append(palavrasv2[i])
 
     return palavrasv3
+'''
+def filtra(palavras, numero):
+    print(palavras)
+    normal = []
+    especiais = "?!.,"
+    
+    for palavra in palavras:
+       
+        if len(palavra) == numero:
+            corrigida = palavra.lower()
+            if not corrigida in normal:
+                normal.append(corrigida)
+    return normal
