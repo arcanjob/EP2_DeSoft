@@ -59,8 +59,7 @@ while info['vidas'] != 0:  #checa se o jogador ainda tem vida
     else:
         
         info = inicializa(palavras_normais, nletras, especulada)
-
-
+        
         info['vidas'] -= 1     #Desconta-se 1 tentativa das que o usuário tem direito
         
         

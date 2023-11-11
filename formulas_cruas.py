@@ -60,11 +60,11 @@ def filtra(palavraas, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTER
     abc = 'qwertyuiopasdfghjklzxcvbnm'
     
     palavrasv2 = [] #criando uma lista de palavra vazia
-    for i in range(len(palavras)): #rodando a lista de palavras
+    for i in range(len(palavraas)): #rodando a lista de palavras
         palavrasv2.append('') 
         #checando se há um caractere especial
-        palavras[i] = palavras[i].lower() #deixando todas as palavras minusculas
-        for letra in palavras[i]:
+        palavraas[i] = palavraas[i].lower() #deixando todas as palavras minusculas
+        for letra in palavraas[i]:
             if letra in abc:  #testando se é caractere especial
                 palavrasv2[i] += letra #formando a palavra denovo
         #a palavra já foi formada
