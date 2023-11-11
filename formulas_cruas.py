@@ -55,7 +55,7 @@ def inidica_posicao(sorteada, especulada):
 
 
 ###############
-def filtra(palavras, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERES ESPECIAIS E DEVOLVE MINUSCULO
+def filtra(palavraas, ndigitos): #FILTRA PALAVRAS PELO TAMANHO, TIRA OS CARACTERES ESPECIAIS E DEVOLVE MINUSCULO
 
     abc = 'qwertyuiopasdfghjklzxcvbnm'
     
