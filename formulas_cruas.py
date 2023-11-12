@@ -1,4 +1,6 @@
 sorteada = []
+
+#define a tela inicial com as regras do jogo para o jogador
 def tela_inicial(nada):
     
     print('''
@@ -10,14 +12,14 @@ def tela_inicial(nada):
         ''')
     #REGRAS
 
-    
+
     print('''
     Regras: 
         Você tem 6 tentativas para acertar uma palavra aleatória de 5 letras.
         - A cada tentativa, essa palavra testada terá suas letras coloridas conforme:
-        . VERDE  : a letra está na posição correta;
-        . AMARELO: a palavra tem a letra, mas está na posição errada;
-        . CINZA: a palavra não tem a letra.
+        . \033[92mVERDE  \033[37m: a letra está na posição correta;
+        . \033[93mAMARELO\033[37m: a palavra tem a letra, mas está na posição errada;
+        . \033[90mCINZA\033[37m: a palavra não tem a letra.
         - Os acentos são ignorados;
         - As palavras podem possuir letras repetidas;
         - CUIDADO!!!, digite apenas palavras válidas
@@ -46,7 +48,6 @@ def inidica_posicao(sorteada, especulada):
            
     return lista
             
-    return lista
 
 def inicializa(palavras):
     import random
@@ -82,7 +83,7 @@ def filtra(palavras, numero):
     
     return normal
     
-    
+#esssa função define a cor da letra na interface visual
 def cor(numero):
     if int(numero) == 0:
         cor = '\033[92m' #verde - acertou a posição

@@ -3,9 +3,14 @@ from formulas_cruas import *
 
 #essa pergunta vai ser importante para que o usuário possa jogar mais de uma vez
 repetir = input('''
-Vamos jogar ? (SIM ou NAO)                   
+Olá, vamos jogar ? (SIM ou NAO)                   
 ''')
+sim = ["s", "sim", "si", "yes", "yep"]
+if repetir in sim:
+    repetir = "sim"
 info = {"rumo": repetir.lower()}
+if repetir != "sim":
+    print("Caso mude de ideia, inicialize o código novamente")
 
 while info["rumo"] == "sim":
     info = inicializa(filtra(lista_de_palavras, 5))
@@ -53,19 +58,19 @@ while info["rumo"] == "sim":
 
         msg = f'''
         \033[90m
-         ━━━ ━━━ ━━━ ━━━ ━━━\033[90m 
+        ┏━━━┳━━━┳━━━┳━━━┳━━━┓\033[90m 
         ┃ {tela['l1'][0]} \033[90m┃ {tela['l1'][1]} \033[90m┃ {tela['l1'][2]} \033[90m┃ {tela['l1'][3]} \033[90m┃ {tela['l1'][4]} \033[90m┃
-         ━━━ ━━━ ━━━ ━━━ ━━━\033[90m 
+        ┣━━━╋━━━╋━━━╋━━━╋━━━┨\033[90m 
         ┃ {tela['l2'][0]} \033[90m┃ {tela['l2'][1]} \033[90m┃ {tela['l2'][2]} \033[90m┃ {tela['l2'][3]} \033[90m┃ {tela['l2'][4]} \033[90m┃ 
-         ━━━ ━━━ ━━━ ━━━ ━━━\033[90m 
+        ┣━━━╋━━━╋━━━╋━━━╋━━━┨\033[90m  
         ┃ {tela['l3'][0]} \033[90m┃ {tela['l3'][1]} \033[90m┃ {tela['l3'][2]} \033[90m┃ {tela['l3'][3]} \033[90m┃ {tela['l3'][4]} \033[90m┃
-         ━━━ ━━━ ━━━ ━━━ ━━━\033[90m
+        ┣━━━╋━━━╋━━━╋━━━╋━━━┨\033[90m 
         ┃ {tela['l4'][0]} \033[90m┃ {tela['l4'][1]} \033[90m┃ {tela['l4'][2]} \033[90m┃ {tela['l4'][3]} \033[90m┃ {tela['l4'][4]} \033[90m┃
-         ━━━ ━━━ ━━━ ━━━ ━━━\033[90m
+        ┣━━━╋━━━╋━━━╋━━━╋━━━┨\033[90m 
         ┃ {tela['l5'][0]} \033[90m┃ {tela['l5'][1]} \033[90m┃ {tela['l5'][2]} \033[90m┃ {tela['l5'][3]} \033[90m┃ {tela['l5'][4]} \033[90m┃
-         ━━━ ━━━ ━━━ ━━━ ━━━\033[90m 
+        ┣━━━╋━━━╋━━━╋━━━╋━━━┨\033[90m  
         ┃ {tela['l6'][0]} \033[90m┃ {tela['l6'][1]} \033[90m┃ {tela['l6'][2]} \033[90m┃ {tela['l6'][3]} \033[90m┃ {tela['l6'][4]} \033[90m┃
-         ━━━ ━━━ ━━━ ━━━ ━━━\033[90m 
+        ┗━━━┻━━━┻━━━┻━━━┻━━━┛\033[90m 
         '''
 
         print(msg)
@@ -76,7 +81,7 @@ while info["rumo"] == "sim":
     #loop principal no qual o jogo vai girar entorno
     while info['tentativas'] != 0:  #checa se o jogador ainda tem vida
         print(f'''
-\033[37mVocê ainda tem {info['tentativas']} tentativas, use-as bem '''
+\033[37mVocê ainda tem \033[92m{info['tentativas']} \033[37mtentativas, use-as bem '''
             )
         #input inicial que vai perguntar a palavra ao usuário
         especulada = input(" - Qual palavra sugeres? 🤔")
