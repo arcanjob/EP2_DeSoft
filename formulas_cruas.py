@@ -90,5 +90,5 @@ def cor(numero):
     if int(numero) == 2:
         cor = '\033[90m' #cinza - errou total
 
-    return cor
+    return cor 
 
