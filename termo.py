@@ -1,7 +1,7 @@
 from palavras import * 
 from formulas_cruas import * 
 
-
+#essa pergunta vai ser importante para que o usuário possa jogar mais de uma vez
 repetir = input('''
 Vamos jogar ? (SIM ou NAO)                   
 ''')
@@ -9,8 +9,7 @@ info = {"rumo": repetir.lower()}
 
 while info["rumo"] == "sim":
     info = inicializa(filtra(lista_de_palavras, 5))
-    print(info)
-    #tela_inicial(1)
+    tela_inicial(1)
 
     #armazenas as palavras anteriores para o usuário ir vendo
     tela = {
@@ -35,9 +34,8 @@ while info["rumo"] == "sim":
             Não foi dessa vez, tente treinar mais vezes
             assim, na próxima, você ganha
             ''')
-
+#vai definir a tela que o usuário vai ver com as palavras
     def interface(colorida):
-        print([colorida])
         
         if contador == 0:
             tela['l1'] = colorida.split()
@@ -76,18 +74,19 @@ while info["rumo"] == "sim":
 
     #loop principal no qual o jogo vai girar entorno
     while info['tentativas'] != 0:  #checa se o jogador ainda tem vida
-
+        print(f'''
+\033[37mVocê ainda tem {info['tentativas']} tentativas, use-as bem '''
+            )
         #input inicial que vai perguntar a palavra ao usuário
         especulada = input(" - Qual palavra sugeres? 🤔")
-    
+        
         #remove os espaços em branco 
         especulada = especulada.strip() 
-
-        if not especulada in lista_de_palavras: #confere se a especulada está ou não na lista de palavras viáveis (palavras)
-            print('Desculpe-me, mas não conheço essa palavra')
-
-        elif len(especulada) != info["n"]: #confere se a palavra tem realmente 5 letras, se não, pede outra
+        if len(especulada) != info["n"]: #confere se a palavra tem realmente 5 letras, se não, pede outra
             print(f'Diga apenas palavras de {info["n"]} letras!!!')
+
+        elif not especulada in lista_de_palavras: #confere se a especulada está ou não na lista de palavras viáveis (palavras)
+            print('Desculpe-me, mas não conheço essa palavra')
 
         elif especulada in info['especuladas'] and info['tentativas'] != 6:    #Confere se o usuário já disse essa palavra, caso sim, pede outra
             print('Poxa, você já me disse essa palavra, cite outra!')
@@ -95,7 +94,8 @@ while info["rumo"] == "sim":
         ##### A RESPOSTA É VÁLIDA - Caso seja do tamanho correto e inédita, o loop roda normalmente
         else:
             
-            info['tentativas'] -= 1     #Desconta-se 1 tentativa das que o usuário tem direito
+            info['tentativas'] -= 1    #Desconta-se 1 tentativa das que o usuário tem direito
+            
             info['especuladas'].append(especulada)    #adiciona a resposta do usuário à lista de palavras especuladas
             
             posicao = inidica_posicao( info["sorteada"], especulada)
@@ -115,7 +115,7 @@ while info["rumo"] == "sim":
             
 
             corespeculadaa = " ".join(info['cor+especulada'])
-            #print('[\033[90m' + corespeculadaa + '\033[90m]')
+            
             msg = interface(corespeculadaa)
             info['especuladas+cores'].append(info['cor+especulada'])
             info['cor+especulada'] = []
@@ -124,15 +124,15 @@ while info["rumo"] == "sim":
             if not info['sorteada'] in info["palavras_sorteadas"]:
                 info["palavras_sorteadas"].append(info['sorteada'])
             contador  += 1 
-    
+    #confere se ganhou ou não e dá a resposta final
+    print(f"      No fim, a palavra sorteada era \033[92m'{info['sorteada']}'\033[37m...")
     if ganha == 5:
         mensagem_final('')
-    
     else:
         mensagem_final('')
-    
+    #permite começar o jogo ou não
     repetir = input('''
-\033[90mPara jogar novamente, digite 'SIM'...
+\033[37mPara jogar novamente, digite 'SIM'...
 Para finalizar, digite 'FIM'                   
 ''')
     info["rumo"] = repetir.lower()

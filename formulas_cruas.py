@@ -1,3 +1,4 @@
+sorteada = []
 def tela_inicial(nada):
     
     print('''
@@ -17,8 +18,8 @@ def tela_inicial(nada):
         . AMARELO: a palavra tem a letra, mas está na posição errada;
         . CINZA: a palavra não tem a letra.
         - Os acentos são ignorados;
-        - As palavras podem possuir letras repetidas.
-    
+        - As palavras podem possuir letras repetidas;
+        - CUIDADO!!!, digite apenas palavras válidas
     Sorteando uma palavra...
     Já tenho uma palavra! vamos, tente adivinhá-la!
     ''')
@@ -50,7 +51,12 @@ def inicializa(palavras):
     import random
     info = {}
     n = len(palavras[0])
-    info['sorteada'] = random.choice(palavras)
+    a = 0
+    while a == 0:
+        sorteio = random.choice(palavras)
+        if not sorteio in sorteada:   
+            info['sorteada'] = sorteio
+            a += 1
     info["palavras_sorteadas"] = []
     info["n"] = n 
     info['especuladas'] = []
@@ -58,7 +64,7 @@ def inicializa(palavras):
     info["cor+especulada"] = []
     info["especuladas+cores"] = []
     info["rumo"] = 'termo'
-
+    sorteada.append(info['sorteada'])
     return info
 
 
