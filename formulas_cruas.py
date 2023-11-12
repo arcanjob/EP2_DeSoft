@@ -41,6 +41,9 @@ def inidica_posicao(sorteada, especulada):
             elif especulada[i] not in sorteada:
                 lista[i] = 2
             
+           
+    return lista
+            
     return lista
 
 def inicializa(palavras):
