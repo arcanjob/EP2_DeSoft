@@ -29,6 +29,7 @@ while info["rumo"] == "sim":
             espero que volte para jogar mais vezes    
             ''')
         else:
+            
             print('''     
                   \033[31mPoxa,
             Não foi dessa vez, tente treinar mais vezes

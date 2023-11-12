@@ -9,6 +9,7 @@ def tela_inicial(nada):
         ┗━━━━━━━━━━━━━━━━━━━━━━┛
         ''')
     #REGRAS
+
     
     print('''
     Regras: 
