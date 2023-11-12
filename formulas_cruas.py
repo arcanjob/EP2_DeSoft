@@ -57,6 +57,8 @@ def inicializa(palavras):
     info['tentativas'] = n + 1
     info["cor+especulada"] = []
     info["especuladas+cores"] = []
+    info["rumo"] = 'termo'
+
     return info
 
 
@@ -83,5 +85,4 @@ def cor(numero):
         cor = '\033[90m' #cinza - errou total
 
     return cor
-
 
