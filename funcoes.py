@@ -26,7 +26,8 @@ def tela_inicial(nada):
     Sorteando uma palavra...
     Já tenho uma palavra! vamos, tente adivinhá-la!
     ''')
-
+    
+#vai comparar as palavras especulada e sorteada
 def inidica_posicao(sorteada, especulada):
     sorteada = sorteada.lower()
     especulada = especulada.lower()
@@ -44,11 +45,9 @@ def inidica_posicao(sorteada, especulada):
                     lista[i] = 0
             elif especulada[i] not in sorteada:
                 lista[i] = 2
-            
-           
     return lista
             
-
+#inicializa o dicionario que vai guardar as informações do jogo como um todo
 def inicializa(palavras):
     import random
     info = {}
@@ -69,7 +68,7 @@ def inicializa(palavras):
     sorteada.append(info['sorteada'])
     return info
 
-
+#filtra as palavras uteis da lista gigantesca de palavras
 def filtra(palavras, numero):
     normal = []
     especiais = "?!.,"

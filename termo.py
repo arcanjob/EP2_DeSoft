@@ -1,6 +1,6 @@
 from palavras import * 
-from formulas_cruas import * 
-
+from funcoes import * 
+pontos = 0
 #essa pergunta vai ser importante para que o usuário possa jogar mais de uma vez
 repetir = input('''
 Olá, vamos jogar ? (SIM ou NAO)                   
@@ -24,7 +24,7 @@ while info["rumo"] == "sim":
     'l4': "     ",
     'l5': "     ",
     'l6': "     "
-
+    
     }
     def mensagem_final(nada):
         if ganha == 5:
@@ -135,31 +135,13 @@ while info["rumo"] == "sim":
     print(f"      No fim, a palavra sorteada era \033[92m'{info['sorteada']}'\033[37m...")
     if ganha == 5:
         mensagem_final('')
+        pontos += 1
     else:
         mensagem_final('')
+    print(f"\033[37mVocê tem {pontos} pontos, jogue mais para poder acumular")
     #permite começar o jogo ou não
     repetir = input('''
 \033[37mPara jogar novamente, digite 'SIM'...
 Para finalizar, digite 'FIM'                   
 ''')
     info["rumo"] = repetir.lower()
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
