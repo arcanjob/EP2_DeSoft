@@ -107,6 +107,7 @@ while info["rumo"] == "sim":
             posicao = inidica_posicao( info["sorteada"], especulada)
             ganha = 0 #vai servir pra dizer se o jogador ganhou ou não
 
+
             for numero in posicao:
                 if numero == 0:
                     ganha += 1
