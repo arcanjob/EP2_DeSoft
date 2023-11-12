@@ -15,9 +15,9 @@ def tela_inicial(nada):
     Regras: 
         Você tem 6 tentativas para acertar uma palavra aleatória de 5 letras.
         - A cada tentativa, essa palavra testada terá suas letras coloridas conforme:
-        . VERDE  : a letra está na posição correta;
-        . AMARELO: a palavra tem a letra, mas está na posição errada;
-        . CINZA: a palavra não tem a letra.
+        . \033[92m VERDE  \033[37m : a letra está na posição correta;
+        . \033[93m AMARELO \033[37m : a palavra tem a letra, mas está na posição errada;
+        . \033[90m CINZA \033[37m : a palavra não tem a letra.
         - Os acentos são ignorados;
         - As palavras podem possuir letras repetidas;
         - CUIDADO!!!, digite apenas palavras válidas
@@ -74,12 +74,12 @@ def filtra(palavras, numero):
     especiais = "?!.,"
     
     for palavra in palavras:
-       
+    
         if len(palavra) == numero:
             corrigida = palavra.lower()
             if not corrigida in normal:
                 normal.append(corrigida)
-    
+
     return normal
     
     
